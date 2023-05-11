@@ -27,7 +27,8 @@ class _VIEWSkinState extends State<VIEWSkin> {
               price: productcontroller.product[index].price,
               title: productcontroller.product[index].name,
               url: productcontroller.product[index].imageUrl,
-              subtitle:productcontroller.product[index].subtitle
+              subtitle:productcontroller.product[index].subtitle,
+              onAddProduct: ()=> {},
             );
           },
         ),

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:she_mec/config.dart';
+import 'package:she_mec/home/widgets/controllers/CartController.dart';
 import 'package:she_mec/home/widgets/view_data.dart';
 import 'package:she_mec/screens/shopingCart/card_controller.dart';
 import 'package:she_mec/sub_for_products/prodect.dart';
@@ -15,25 +16,27 @@ class HomeCard extends StatelessWidget {
     required this.price,
     required this.index,
     required this.subtitle,
+    required this.onAddProduct,
   });
   String url;
   String title;
   int index;
   String price;
   String subtitle;
+  final Function onAddProduct;
 
-  final productcontroller = Get.put(Prodectcontroller());
 
-  final cartConttroller = Get.put(CardController());
+
+ 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(
-          builder: (context) {
-            return Prodect(list: productcontroller.product[index],index:index);
-          },
-        ));
+        // Navigator.push(context, MaterialPageRoute(
+        //   builder: (context) {
+        //     return Prodect(list: productcontroller.product[index],index:index);
+        //   },
+        // ));
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -75,8 +78,7 @@ class HomeCard extends StatelessWidget {
                 ),
                 child: IconButton(
                     onPressed: () {
-                      cartConttroller
-                          .addProduct(productcontroller.product[index]);
+                      // onAddProduct({"url": url, "title": title, "price": price, "subtitle": subtitle });
                     },
                     icon: const Icon(Icons.shopping_bag_rounded,color: Colors.white,)),
               )

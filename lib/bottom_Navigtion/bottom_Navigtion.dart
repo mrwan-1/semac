@@ -18,14 +18,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectScrenIndex = 0;
   bool iSlogin = true;
-  // login() {
-  //   var user = FirebaseAuth.instance.currentUser;
-  //   if (user == null) {
-  //     iSlogin = false;
-  //   } else {
-  //     iSlogin = true;
-  //   }
-  // }
+ 
 
   final List<Map<String, dynamic>> _screen = [
     {
